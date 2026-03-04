@@ -12,7 +12,7 @@ const baudRate = 9600;
 const arduino = new SerialPort({
   path: portPath,
   baudRate: baudRate,
-  autoOpen: true 
+  autoOpen: true,
 });
 
 arduino.on("open", () => {
@@ -23,6 +23,7 @@ arduino.on("error", (err) => {
   console.error(`[SERIAL ERROR] ${err.message}`);
 });
 
+// Main logic
 app.post("/send", (req, res) => {
   const { message } = req.body;
 

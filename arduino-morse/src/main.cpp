@@ -49,7 +49,6 @@ void playMorseChar(char c)
   delay(3 * UNIT);
 }
 
-// Logic abstraction: This is what your summary claimed you had.
 void playMorse(String msg)
 {
   Serial.print("Playing: ");
@@ -60,12 +59,16 @@ void playMorse(String msg)
   }
 }
 
+// Main function
+////////////////
 void setup()
 {
   pinMode(LED_PIN, OUTPUT);
   Serial.begin(9600);
 }
 
+// Loop function
+////////////////
 void loop()
 {
   static String input = "";
